@@ -426,7 +426,6 @@ export function useServerCardData(props) {
         points
       }
     })
-  )
 })
 
   const hasThreeNetDetails = computed(() => threeNetDetails.value.length > 0)
