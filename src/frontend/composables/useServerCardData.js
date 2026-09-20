@@ -370,6 +370,7 @@ export function useServerCardData(props) {
   }
 
   const threeNetDetails = computed(() => THREE_NET_DEFS
+    .filter(def => !isPingDisabled(props.server[def.pingField]))
     .map(def => {
       const customName = props.sysConfig?.[`custom_${def.key}_name`]
       const label = String(customName || trans.value[def.labelKey] || def.fallbackLabel)
